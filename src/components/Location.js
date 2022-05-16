@@ -38,8 +38,6 @@ const Location = () => {
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-    console.log(location);
-
     return (
         <div className="body-container">
             <div className="input-controls">

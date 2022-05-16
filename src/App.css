@@ -155,7 +155,7 @@ body {
   z-index: 1;
   opacity: 1;
   transform:
-    translate3d(0, calc((50%) - (0.8rem * 0.8 - (2.1 * 1.8)), 0)
+    translate3d((0, 50%, 0)
     scale(0.8));
   transition:
     transform 300ms,
