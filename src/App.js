@@ -1,23 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import Location from './components/Location';
+import banner from './images/banner.png';
+import bannerText from './images/bannerText.png';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <img className="banner" src={banner} alt="Rick and Morty's banner" />
+        <img className="bannerText" src={bannerText} alt="Rick and Morty's title" />
       </header>
+      <Location />
     </div>
   );
 }

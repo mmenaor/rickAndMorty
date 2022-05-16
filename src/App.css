@@ -1,38 +1,229 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff;
+}
+
+body {
+  background-color: #05292e;
+}
+
+.banner {
+  width: 100%;
+}
+
+.bannerText {
+  position: absolute;
+  z-index: 1;
+  bottom: calc(100vh/(1440px/372px));
+  left: calc(50% - (100vw - 65%)/2);
+  width: calc(100vw - 60%);
+}
+
+.body-container {
+  padding: 30px calc(100vw - 90%);
+}
+
+.location-title {
+  font-size: 40px;
   text-align: center;
+  margin: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.location-container {
+  background-color: rgba(255, 255, 0, 0.473);
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 10px;
+  min-height: 80px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.location-container > li {
+  text-align: center;
+  width: 200px;;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.location-container > li > b {
+  font-size: 20px;
+}
+
+.residents-title {
+  font-size: 40px;
+  text-align: center;
+  margin: 20px;
+}
+
+.residents-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.character-container {
+  background-color: #062226;
   display: flex;
   flex-direction: column;
+  max-width: 280px;
+  position: relative;
+}
+
+.character-status {
+  position: absolute;
+  background-color: #062226;
+  display: inline-block;
+  width: 100px;
+  height: 1.2rem;
+  top: 15px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 0.8rem;
+  display:flex;
   align-items: center;
+  padding-left: 10px;
+}
+
+.character-image {
+  width: 280px;
+}
+
+.character-info {
+  list-style: none;
+  padding: 0 15px 15px 15px;
+}
+
+.character-info > li {
+  margin: 5px 0;
+}
+
+.character-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding-top: 15px;
+  padding-left: 10px;
+}
+
+.info-type {
+  color: #909090;
+  font-size: 0.8rem;
+}
+
+.character-container > hr {
+  width: 260px;
+  margin: 10px auto;
+}
+
+.input-controls {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.input-text {
+  margin: 0;
+  padding: 5px 5px;
+  color: #062226;
+  width: 400px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 0.1rem;
+  transition: box-shadow 300ms;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.input-text::placeholder {
+  color: #B0BEC5;
+}
+
+.input-text:focus {
+  outline: none;
+  box-shadow: 0.2rem 0.8rem 1.6rem #9eb135;
+}
+
+.input-text:placeholder-shown + .input-label {
+  visibility: hidden;
+  z-index: -1;
+}
+
+.input-text:not(:placeholder-shown) + .input-label,
+.input-text:focus:not(:placeholder-shown) + .input-label {
+  visibility: visible;
+  z-index: 1;
+  opacity: 1;
+  transform:
+    translate3d(0, calc((50%) - (0.8rem * 0.8 - (2.1 * 1.8)), 0)
+    scale(0.8));
+  transition:
+    transform 300ms,
+    visibility 0ms,
+    z-index 0ms;
+}
+
+/* CSS */
+.input-button {
+  background-color: #062226;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  padding: 8px .8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.input-button:hover,
+.input-button:focus {
+  background-color: #909090;
+}
+
+.input-button:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+.input-button:active {
+  background-color: rgba(255, 255, 0, 0.473);
+  box-shadow: none;
+}
+
+.pagination {
+  list-style: none;
+  display: flex;
+  margin: 30px;
+  justify-content: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pagination > li {
+  background-color: #062226;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination > li > a {
+  text-decoration: none;
+  font-size: 1.2rem;
 }
