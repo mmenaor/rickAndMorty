@@ -17,7 +17,7 @@ body {
 .bannerText {
   position: absolute;
   z-index: 1;
-  bottom: calc(100vh/1.5);
+  top: 10px;
   left: calc(50% - (100vw - 65%)/2);
   width: calc(100vw - 60%);
 }
