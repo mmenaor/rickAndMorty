@@ -223,7 +223,13 @@ body {
   align-items: center;
 }
 
-.pagination > li > a {
+.pagination > li > span {
   text-decoration: none;
   font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.leyend-instructions {
+  text-align: center;
+  margin-top: 1.5rem;
 }

@@ -36,7 +36,10 @@ const Location = () => {
     const indexOfFirstChar = indexOfLastChar - charsPerPage;
     const currentChars = location.residents?.slice(indexOfFirstChar, indexOfLastChar);
 
-    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+    const paginate = (pageNumber) => {
+        window.scrollTo({top:0, behavior: 'smooth'});
+        setCurrentPage(pageNumber)
+    };
 
     return (
         <div className="body-container">
@@ -44,6 +47,7 @@ const Location = () => {
                 <input type="text" onChange={e => setId(e.target.value)} onKeyDown={handleKeyPress} value={id} placeholder="Type the location ID" className="input-text"/>
                 <button onClick={searchLocation} className="input-button">Change location</button>
             </div>
+            <p className="leyend-instructions">Write down a number between 1 and 126 to look for a location</p>
             <h2 className="location-title">{location.name}</h2>
             <ul className="location-container">
                 <li><b>Type:</b><br />{location.type}</li>
